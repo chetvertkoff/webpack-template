@@ -1,0 +1,19 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+
+form input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+ul li{
+    margin-bottom: 5px;
+    padding: 20px 10px 15px 5px;
+}
+ul li input[type=submit]{
+    display: block;
+    margin-left: auto;
+}
