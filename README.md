@@ -1,1 +1,1 @@
-<h1>My Webpack temlplate</h1>
+<h1>My Webpack template</h1>
