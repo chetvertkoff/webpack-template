@@ -38,7 +38,13 @@ module.exports = {
     sourceMapFilename: 'bundle.map'
   },
   module: {
-    rules: [{
+    rules: [
+    // JS
+    {
+      test: /\.(js|jsx)$/,
+      loader: 'babel-loader',
+      exclude: '/node_modules/'
+    },{
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {

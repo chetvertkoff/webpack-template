@@ -1,2 +1,4 @@
 import './sass/test.sass'
-import './js/common.js'
+
+// React app
+import './App/App.js'
