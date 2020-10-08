@@ -22,3 +22,6 @@ for (let id of idGenerator){
     console.log(id);
 
 }
+
+
+console.log(13);
