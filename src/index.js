@@ -1,4 +1,4 @@
-import './sass/test.sass'
+// import './sass/test.sass'
 
 // React app
 import './App/App.js'
