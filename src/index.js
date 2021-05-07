@@ -1,2 +1,5 @@
 import './assets/css/index.css';
-import './App/App';
+import Vue from 'vue'
+import App from "./App/App";
+
+new Vue({render: h => h(App)}).$mount('#app')

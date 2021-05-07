@@ -45,16 +45,22 @@ module.exports = {
       options: {
         name: '[name].[ext]'
       }
-    }, {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: { sourceMap: true }
-        }
-      ]
-    }]
+    },  {
+        test: /\.(sass|scss|css)$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // sass-loader >= 8
+              sassOptions: {
+                indentedSyntax: true
+              }
+            }
+          }
+        ]
+      }]
   },
 
   resolve: {

@@ -1,3 +1,14 @@
 <template>
-  <div id="app">hello vue</div>
+  <div>hello vue</div>
 </template>
+
+<script>
+export default {
+  name: 'App'
+}
+
+</script>
+
+<style lang="sass">
+
+</style>
