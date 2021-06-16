@@ -37,8 +37,8 @@ module.exports = {
             loader: 'vue-loader',
             options: {
               loaders: {
-                'scss': 'vue-style-loader!style-loader!sass-loader',
-                'sass': 'vue-style-loader!style-loader!sass-loader?indentedSyntax'
+                'scss': 'vue-style-loader!css-loader!sass-loader',
+                'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
               }
             },
           },
@@ -77,7 +77,7 @@ module.exports = {
           'thread-loader',
           'style-loader',
           {
-            loader: 'style-loader',
+            loader: 'css-loader',
             // options: { sourceMap: true }
           },
           {

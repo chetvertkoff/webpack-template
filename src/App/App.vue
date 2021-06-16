@@ -1,13 +1,14 @@
 <template>
-  <div>hello Vue</div>
+  <div>{{hello}}</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Component from 'vue-class-component';
 
-export default Vue.extend({
-  name: 'App'
-});
+@Component()
+export default class App {
+  private readonly hello = 'hello Vue'
+}
 </script>
 
 <style lang="scss">

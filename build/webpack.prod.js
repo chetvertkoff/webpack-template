@@ -65,22 +65,21 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   },
   module: {
     rules: [{
-      test: /\.(scss|sass|css)$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'style-loader',
-          options: { sourceMap: true }
-        }, {
-          loader: 'sass-loader',
-          options: { sourceMap: true }
-        },
-        {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, postcssOptions: { config: `./build/postcss.config.js` } }
-        }
-      ]
-    }]
+        test: /\.(scss|sass|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          }, {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          },{
+            loader: 'postcss-loader',
+            options: { sourceMap: true, postcssOptions: { config: `./build/postcss.config.js` } }
+          }
+        ]
+      }]
   },
   plugins: [
     // new BundleAnalyzerPlugin(),
