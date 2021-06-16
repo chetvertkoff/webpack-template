@@ -1,14 +1,19 @@
 <template>
-  <div>hello vue</div>
+  <div>hello Vue</div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
+<script lang="ts">
+import Vue from 'vue';
 
+export default Vue.extend({
+  name: 'App'
+});
 </script>
 
-<style lang="sass">
-
+<style lang="scss">
+html {
+  body {
+    background: #ffffff;
+  }
+}
 </style>
