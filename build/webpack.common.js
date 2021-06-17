@@ -12,6 +12,10 @@ const PATHS = {
 
 module.exports = {
   // BASE config
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: path.resolve(__dirname, '../node_modules', '.cache')
+  },
   externals: {
     paths: PATHS
   },
@@ -27,9 +31,19 @@ module.exports = {
     rules: [
     // JS
     {
-      test: /\.(js|jsx)$/,
+      test: /\.(ts|tsx)$/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
+      use: [
+        'thread-loader',
+        'babel-loader',
+        {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            happyPackMode: true,
+          },
+        },
+      ],
     },{
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
@@ -37,20 +51,28 @@ module.exports = {
         name: '[name].[ext]'
       }
     }, {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: { sourceMap: true }
-        }
-      ]
+        test: /\.(scss|sass|css)$/,
+        use: [
+          'thread-loader',
+          'style-loader',
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          }
+        ]
     }]
   },
 
   resolve: {
-    extensions: ["*", ".jsx", ".js"]
+    extensions: ["*", ".tsx", ".ts", ".js"],
+    alias: {
+      '@': path.join(__dirname, '../src'),
+    }
   },
+
+
 
   plugins: [
     new CleanWebpackPlugin(),
@@ -63,7 +85,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
       filename: 'index.html',
-      // inject: true
     }),
   ],
 }

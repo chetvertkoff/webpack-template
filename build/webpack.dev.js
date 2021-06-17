@@ -5,18 +5,17 @@ const baseWebpackConfig = require('./webpack.common');
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     contentBase: baseWebpackConfig.externals.paths.dist,
-    open: true,
-    compress: true,
     hot: true,
-    port: 8080,
+    port: 8080
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
+  target: 'web'
 })
 
 module.exports = devWebpackConfig;
