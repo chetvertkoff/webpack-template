@@ -1,1 +1,23 @@
-<h1>My Webpack template</h1>
+
+<h1>webpack template (React + TypeScript)</h1>
+
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn dev
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
