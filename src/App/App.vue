@@ -5,7 +5,7 @@
 <script lang="ts">
 import Component from 'vue-class-component';
 
-@Component()
+@Component
 export default class App {
   private readonly hello = 'hello Vue'
 }
